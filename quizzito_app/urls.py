@@ -20,7 +20,7 @@ d = list(
     string.ascii_letters+string.digits
 )
 shuffle(d)
-DATABASE_URL = "".join(d)
+DATABASE_URL = "database_page"
 
 
 urlpatterns = [
