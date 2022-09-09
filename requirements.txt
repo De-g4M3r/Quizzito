@@ -76,7 +76,6 @@ snap==0.5
 soupsieve==2.2.1
 sqlparse==0.4.2
 stem==1.8.0
-ufw==0.36
 urllib3==1.26.5
 webencodings==0.5.1
 Werkzeug==1.0.1
