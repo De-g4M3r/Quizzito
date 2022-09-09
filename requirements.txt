@@ -59,7 +59,6 @@ PyQt5==5.15.2
 PyQt5-sip==12.8.1
 PySimpleSOAP==1.16.2
 PySocks==1.7.1
-python-dateutil==1.5
 python-debian==0.1.39
 python-debianbts==3.1.0
 python-xlib==0.29
