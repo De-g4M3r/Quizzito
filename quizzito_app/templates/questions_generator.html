@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1">
+    <meta name="viewpoint">
+    <title>Quizzito</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'questions_generator.css' %}">
+</head>
+<body>
+    <div class="navigator"><a href="back_to_database/" title="Cancel all changes and return to Database"><button><<</button></a></div>
+    <header>Questions Generator</header>
+    <div class="form_field" align="center">
+        <form method="post" action="generated/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="question_field">
+                <textarea placeholder="Enter Question here" name="question" required></textarea>
+            </div>
+            <div class="answer_field">
+                <input type="text" name="answer" placeholder="Answer" required>
+            </div>
+            <div class="options">
+                <input type="text" name="opt1" placeholder="Option 1" required>
+            </div>
+            <div class="options">
+                <input type="text" name="opt2" placeholder="Option 2" required>
+            </div>
+            <div class="options">
+                <input type="text" name="opt3" placeholder="Option 3" required>
+            </div>
+            <div class="options">
+                <input type="text" name="opt4" placeholder="Option 4" required>
+            </div>
+            <div class="controller">
+                <button type="submit" title="Save all changes">Save</button><br/>
+                <input type="reset" title="Undo all actions"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

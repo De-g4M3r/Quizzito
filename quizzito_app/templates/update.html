@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1">
+    <meta name="viewpoint">
+    <title>Quizzito</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'update.css' %}">
+</head>
+<body>
+    <div class="navigator"><a href="back_to_database/" title="Cancel all changes and return to Database"><button><<</button></a></div>
+    <header>Question Updates</header>
+    <div class="form_field" align="center">
+        <form method="post" action="updated/{{ modifier.id }}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="question_field">
+                <input type="text" name="question" placeholder="Question" value="{{ modifier.question }}" title="Question">
+            </div>
+            <div class="answer_field">
+                <input type="text" name="answer" placeholder="Answer" value="{{ modifier.answer }}" title="Answer">
+            </div>
+            <div class="options">
+                <input type="text" name="opt1" placeholder="Option 1" value="{{ modifier.opt1 }}" title="Option">
+            </div>
+            <div class="options">
+                <input type="text" name="opt2" placeholder="Option 2" value="{{ modifier.opt2 }}" title="Option">
+            </div>
+            <div class="options">
+                <input type="text" name="opt3" placeholder="Option 3" value="{{ modifier.opt3 }}" title="Option">
+            </div>
+            <div class="options">
+                <input type="text" name="opt4" placeholder="Option 4" value="{{ modifier.opt4 }}" title="Option">
+            </div>
+            <div class="controller">
+                <button type="submit" title="Save Changes">Save</button><br/>
+                <a href=""><input type="reset" title="Undo all changes"/></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

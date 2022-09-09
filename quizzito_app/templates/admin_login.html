@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Quizzito</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1">
+  <meta name="viewpoint">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin_login.css' %}"/>
+</head>
+<body>
+  <div class="navigator"><a href="/"><button><<</button></a></div>
+  <div class="login_form" align="center">
+    <div class="login_header">Login As Administrator, Hope Demiz Gave you the password</div>
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="box_header">Login</div>
+      {% if not verifier == "" %}
+        {% if verifier %}
+          <span>Invalid Credentials</span>
+        {% endif %}
+      {% endif %}
+      <div class="credentials">
+        <div>{{ form.username }}</div>
+        <div>{{ form.password }}</div>
+        <div><button type="submit">Login</button></div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

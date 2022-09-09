@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Quizzito</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewpoint"/>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <script>
+    function deleteButton() {
+      alert("This Question has been deleted and cannot be undone");
+    }
+  </script>
+</head>
+<body>
+<main>
+  <div>Total Questions: {{ total }}</div>
+  <table align="center">
+    <caption>Questions Database</caption>
+    <tr>
+      <th rowspan="2">ID</th>
+      <th rowspan="2">Questions</th>
+      <th rowspan="2">Answers</th>
+      <th colspan="4">Options</th>
+      <th rowspan="2">Modify</th>
+    </tr>
+    <tr>
+      <th>Option 1</th>
+      <th>Option 2</th>
+      <th>Option 3</th>
+      <th>Option 4</th>
+    </tr>
+    {% for i in database %}
+      <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.question }}</td>
+        <td>{{ i.answer }}</td>
+        <td>{{ i.opt1 }}</td>
+        <td>{{ i.opt2 }}</td>
+        <td>{{ i.opt3 }}</td>
+        <td>{{ i.opt4 }}</td>
+        <td>
+          <a href="delete/{{ i.id }}">
+            <button title="delete this Question" onclick="deleteButton()">Delete</button>
+          </a>
+          <a href="update/{{ i.id }}">
+            <button title="Make changes to this Question">Change</button>
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <div align="center" class="submit_button">
+    <a href="add/"><button title="Generate a new question">Add Question</button></a><br>
+    <div class="back_home"><a href="back_to_homepage/" title="Homepage">Home</a></div>
+  </div>
+</main>
+</body>
+</html>

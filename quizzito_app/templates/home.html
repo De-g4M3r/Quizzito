@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <meta name="viewpoint">
+    <title>Quizzito</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+</head>
+<body>
+<header>
+    <div class="head1">Quizzito</div>
+    <div class="head2">Programming Quiz Hub for Computer Science Students</div>
+</header>
+<nav>
+    <a href="#python">Home</a>
+    <a href="#Casual">Casual</a>
+    <a href="admin_login/" title="For Administrators Only!!!">STAFF</a>
+</nav>
+<main>
+    <form action="score/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <ol>
+            {% for x, i in questions %}
+            <li>
+                <p>{{ i.question }}</p>
+                <div class="options_field">
+                    <div class="options"><input name="question_{{ x|add:1 }}" type="radio" id="question{{ x|add:1 }}_opt1" value="{{ i.opt1 }}"/><label for="question{{ x|add:1 }}_opt1">{{ i.opt1 }}</label></div>
+                    <div class="options"><input name="question_{{ x|add:1 }}" type="radio" id="question{{ x|add:1 }}_opt2" value="{{ i.opt2 }}"/><label for="question{{ x|add:1 }}_opt2">{{ i.opt2 }}</label></div>
+                    <div class="options"><input name="question_{{ x|add:1 }}" type="radio" id="question{{ x|add:1 }}_opt3" value="{{ i.opt3 }}"/><label for="question{{ x|add:1 }}_opt3">{{ i.opt3 }}</label></div>
+                    <div class="options"><input name="question_{{ x|add:1 }}" type="radio" id="question{{ x|add:1 }}_opt4" value="{{ i.opt4 }}"/><label for="question{{ x|add:1 }}_opt4">{{ i.opt4 }}</label></div>
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+        <div><button type="submit" name="submit">Submit</button></div>
+    </form>
+    {% if score != '' %}
+        <div class="score">Score:
+        {% if score > 50 %}
+            <span class="higher_score">{{score}}%</span>
+        {% else %}
+            <span class="lower_score">{{score}}%</span>
+        {% endif %}
+        </div>
+    {% endif %}
+</main>
+<footer>
+    <div>Footer Content</div>
+</footer>
+</body>
+</html>
