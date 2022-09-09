@@ -32,7 +32,6 @@ Jinja2==3.0.3
 kiwisolver==1.4.4
 lxml==4.6.3
 MarkupSafe==2.0.1
-mate-menu==20.4.1
 mate-tweak==21.4.2
 matplotlib==3.5.2
 mechanize==0.4.5
