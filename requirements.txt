@@ -40,7 +40,6 @@ netifaces==0.10.9
 numpy==1.23.1
 nyx==2.1.0
 olefile==0.46
-onboard==1.4.1
 onionshare==2.2
 packaging==20.9
 pafy==0.5.5
