@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-us5+1sk%!kf)2g!922t%afz&z@7fbw5^vg%4so9_i!c3462!@a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'quizzito.herokuapp.com']
 
 
 # Application definition
