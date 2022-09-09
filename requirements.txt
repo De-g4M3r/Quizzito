@@ -30,7 +30,6 @@ idna==2.10
 itsdangerous==1.1.0
 Jinja2==3.0.3
 kiwisolver==1.4.4
-louis==3.22.0
 lxml==4.6.3
 MarkupSafe==2.0.1
 mate-menu==20.4.1
